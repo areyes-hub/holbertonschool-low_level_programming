@@ -3,7 +3,7 @@
 /*
  * main - Entry point
  *
- * This program prints a string of characters using puts()
+ * @This program prints a string of characters using puts()
  *
  * Return: Always 0 (Success)
  */
