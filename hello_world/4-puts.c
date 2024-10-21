@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-/*
+/**
  * main - Entry point
  *
- * @This program prints a string of characters using puts()
+ * Description: This program prints a string of characters using puts()
  *
  * Return: Always 0 (Success)
  */
