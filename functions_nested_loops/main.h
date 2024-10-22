@@ -1,9 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-void putch()
+char putch()
 {
-	printf("_putchar\n");
+	printf("_putchar");
+	return (0);
 }
 
 #endif
