@@ -3,8 +3,7 @@
 
 char putch()
 {
-	printf("_putchar");
-	return (0);
+	return ("_putchar");
 }
 
 #endif
