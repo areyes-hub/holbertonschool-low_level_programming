@@ -6,5 +6,6 @@
  */
 int main(void)
 {
+	char putch(char c);
 	return (0);
 }
