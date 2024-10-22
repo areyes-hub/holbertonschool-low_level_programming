@@ -8,6 +8,11 @@ int main(void)
 	print_alphabet();
 	return (0);
 }
+
+/**
+ * print_alphabet - Print all characters
+ * Return: void
+ */
 void print_alphabet(void)
 {
 	int i;
