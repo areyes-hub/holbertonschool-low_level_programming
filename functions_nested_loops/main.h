@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-char putch()
+void putch()
 {
 	printf("_putchar\n");
 }
