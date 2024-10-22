@@ -1,9 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-char putch()
+char _putchar(char c)
 {
-	printf("_putchar\n");
+	printf("%c", c);
 	return (0);
 }
 
