@@ -1,9 +1,1 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-char _putchar(char c)
-{
-	return (c);
-}
-
-#endif
+int _putchar(char c);
