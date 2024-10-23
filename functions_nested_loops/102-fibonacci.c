@@ -7,13 +7,13 @@ int main(void)
 {
 	long int i, n = 50, n1 = 0, n2 = 1, next;
 
-	printf("%d", n2);
+	printf("%ld", n2);
 	for (i = 1; i < n; i++)
 	{
 		next = n1 + n2;
 
 		printf(", ");
-		printf("%d", next);
+		printf("%ld", next);
 		n1 = n2;
 		n2 = next;
 	}
