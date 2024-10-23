@@ -7,15 +7,18 @@ int main(void)
 {
 	long int i, n = 50, n1 = 0, n2 = 1, next;
 
-	printf("%ld", n2);
-	for (i = 1; i < n; i++)
+	for (i = 1; i <= n; i++)
 	{
 		next = n1 + n2;
 
-		printf(", ");
 		printf("%ld", next);
 		n1 = n2;
 		n2 = next;
+		if (i == 50)
+		{
+			break;
+		}
+		printf(", ");
 	}
 	printf("\n");
 	return (0);
