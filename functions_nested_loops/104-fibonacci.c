@@ -11,7 +11,7 @@ int main(void)
 	{
 		next = n1 + n2;
 		
-		printf("%ld", next);
+		printf("%lu", next);
 		n1 = n2;
 		n2 = next;
 		if (i == 98)
