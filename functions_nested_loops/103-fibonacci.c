@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	long long int i, n = 33, n1 = 0, n2 = 1, next, sum;
+	long int i, n = 33, n1 = 0, n2 = 1, next, sum;
 
 	for (i = 1; i <= n; i++)
 	{
@@ -18,7 +18,7 @@ int main(void)
 		{
 			sum += next;
 		}
-		printf("%lld", sum);
+		printf("%ld", sum);
 	}
 	printf("\n");
 	return (0);
