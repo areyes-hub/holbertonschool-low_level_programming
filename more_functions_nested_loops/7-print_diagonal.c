@@ -9,6 +9,10 @@ void print_diagonal(int n)
 	int gap;
 	int line;
 
+	if (n <= 0)
+	{
+		_putchar(10);
+	}
 	for (gap = 0; gap < n; gap++)
 	{
 		for (line = 0; line < gap; line++)
