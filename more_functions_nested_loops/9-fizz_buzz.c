@@ -21,7 +21,10 @@ int main(void)
 		{
 			printf("Buzz");
 		}
-		printf("%d", num);
+		else
+		{
+			printf("%d", num);
+		}
 	}
 	printf("\n");
 	return (0);
