@@ -9,6 +9,10 @@ void print_square(int size)
 	int lines;
 	int blocks;
 
+	if (size <= 0)
+	{
+		_putchar(10);
+	}
 	for (lines = 0; lines < size; lines++)
 	{
 		for (blocks = 0; blocks < size; blocks++)
