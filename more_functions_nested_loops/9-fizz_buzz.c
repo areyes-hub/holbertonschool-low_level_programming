@@ -19,15 +19,16 @@ int main(void)
 		}
 		else if (num % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (num == 100)
+			{
+				break;
+			}
+			printf(" ");
 		}
 		else
 		{
 			printf("%d ", num);
-		}
-		if (num == 100)
-		{
-			break;
 		}
 	}
 	printf("\n");
