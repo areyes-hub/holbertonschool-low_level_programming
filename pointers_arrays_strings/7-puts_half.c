@@ -6,31 +6,34 @@
  */
 void puts_half(char *str)
 {
-	int len = 0;
-	int item = 0;
-	int half;
-	int i;
+	int len = _strlen(str);
 
-	while (str[item] != '\0')
+	if (len % 2 == 0)
 	{
-		item++;
-		len++;
-		if (len % 2 == 0)
-		{
-			half = len / 2;
-		}
-		else
-		{
-			half = (len + 1) / 2;
-		}
+		len = len / 2;
 	}
-	for (i = half; str[i] != '\0'; i++)
+	else
 	{
-		if (str == 0)
-		{
-			_putchar('\0');
-		}
-		_putchar(str[i]);
+		len = (len + 1) / 2;
+	}
+	while (str[len] != '\0')
+	{
+		_putchar(str[len]);
+		len++;
 	}
 	_putchar('\n');
+}
+/**
+ *_strlen - returns the length of a string
+ * @s: string
+ *Return: returns lenght;
+ */
+int _strlen(char *s)
+{
+	int count, inc;
+
+	inc = 0;
+	for (count = 0; s[count] != '\0'; count++)
+		inc++;
+	return (inc);
 }
