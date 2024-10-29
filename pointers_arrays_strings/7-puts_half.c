@@ -28,7 +28,7 @@ void puts_half(char *str)
 	{
 		if (str == 0)
 		{
-			break;
+			_putchar('\0');
 		}
 		_putchar(str[i]);
 	}
