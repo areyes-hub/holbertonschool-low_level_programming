@@ -13,8 +13,8 @@ void puts_half(char *str)
 
 	while (str[item] != '\0')
 	{
-		len++;
 		item++;
+		len++;
 		if (len % 2 == 0)
 		{
 			half = len / 2;
