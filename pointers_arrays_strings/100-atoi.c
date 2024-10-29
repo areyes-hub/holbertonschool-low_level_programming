@@ -15,6 +15,10 @@ int _atoi(char *s)
 		{
 			result = (result * 10) + (s[i] - '0');
 		}
+		else if (*s == '\0')
+		{
+			result = 0;
+		}
 	}
 	return (result);
 }
