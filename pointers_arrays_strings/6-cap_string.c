@@ -10,7 +10,7 @@ char *cap_string(char *s)
 
 	while (s[item] != '\0')
 	{
-		if (s[item] == ' ')
+		if (s[item] == ' ' || s[item] == '\n' || s[item] == '(' || s[item] == '{')
 		{
 			s[item + 1] = s[item + 1] - 32;
 		}
