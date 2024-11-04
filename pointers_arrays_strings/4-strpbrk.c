@@ -11,7 +11,7 @@ char *_strpbrk(char *s, char *accept)
 	{
 		if (*s == *accept)
 		{
-			return (s - 1);
+			return (s);
 		}
 		s++;
 		accept++;
