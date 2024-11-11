@@ -32,23 +32,16 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 	else
-	{
 		s2 = "";
-	}
 	new_str = malloc(sz_a + sz_b + 1);
 	if (!new_str)
-	{
 		return (NULL);
-	}
+
 	ptr = new_str;
 	while (*s1)
-	{
 		*ptr++ = *s1++;
-	}
 	while (*s2)
-	{
 		*ptr++ = *s2++;
-	}
 	*ptr = 0;
 	return (new_str);
 }
