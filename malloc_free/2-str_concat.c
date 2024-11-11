@@ -8,29 +8,47 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *new_str;
-	int sz_a = 0, sz_b = 0;
-	int sz = sz_a + sz_b;
-	int i, j;
+	unsigned int sz_a = 0, sz_b = 0;
+	char *ptr, *new_str;
 
+	ptr = s1;
+	if (s1)
+	{
+		while (*ptr++)
+		{
+			sz_a++;
+		}
+	}
+	else
+	{
+		s1 = "";
+	}
+	ptr = s2;
+	if (s2)
+	{
+		while (*ptr++)
+		{
+			sz_b++;
+		}
+	}
+	else
+	{
+		s2 = "";
+	}
+	new_str = malloc(sz_a + sz_b + 1);
+	if (!new_str)
+	{
+		return (NULL);
+	}
+	ptr = new_str;
 	while (*s1)
 	{
-		s1++;
-		sz_a++;
+		*ptr++ = *s1++;
 	}
 	while (*s2)
 	{
-		s2++;
-		sz_b++;
+		*ptr++ = *s2++;
 	}
-	new_str = malloc(sz * sizeof(char));
-	for (i = 0; i < sz_a; i++)
-	{
-		new_str[i] = s1[i];
-	}
-	for (j = 0; j < sz_b && i < sz_b; j++, i++)
-	{
-		new_str[i] = s2[j];
-	}
+	*ptr = 0;
 	return (new_str);
 }
