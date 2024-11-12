@@ -9,8 +9,12 @@ void *malloc_checked(unsigned int b)
 {
 	void *alloc;
 
-	alloc = malloc(b);
-	if (alloc == NULL || b == 0)
+	if (b == 0)
+	{
 		return (NULL);
+	}
+	alloc = malloc(b);
+	if (alloc == NULL)
+		return (alloc);
 	return (alloc);
 }
