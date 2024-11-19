@@ -68,7 +68,13 @@ void print_int(va_list args)
  */
 void print_string(va_list args)
 {
-	printf("%s", va_arg(args, char *));
+	char *s = va_arg(args, char *);
+
+	if (!s)
+	{
+		printf("(nil)");
+	}
+	printf("%s", s);
 }
 /**
  * print_float - prints a floating point number
