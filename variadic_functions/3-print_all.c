@@ -10,39 +10,72 @@
  */
 void print_all(const char * const format, ...)
 {
+	print_type types[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
 	va_list args;
-	const char *signs;
-	int length, i, j;
+	char *separator;
+	int i, j;
 
 	i = 0;
 	j = 0;
-	signs = format;
-	length = strlen(format);
+	separator = "";
 	va_start(args, format);
-	while (i < length)
+	while (format && format[i])
 	{
-		char *letter = va_arg(args, char*);
-
-		if (*signs == 'c')
+		while (types[j].type)
 		{
-			printf("%s, ", letter);
+			if (*types[j].type == format[i])
+			{
+				printf("%s", separator);
+				types[j].f(args);
+				separator = ", ";
+			}
+			++j;
 		}
-		printf("%s, ", letter);
-		i++;
-		signs++;
-	}
-	while (j < length)
-	{
-		double num = va_arg(args, double);
-
-		if (*signs == 'f')
-		{
-			printf("%f, ", num);
-		}
-		printf("%.0f, ", num);
-		j++;
-		signs++;
+		j = 0;
+		++i;
 	}
 	printf("\n");
 	va_end(args);
+}
+/**
+ * print_char - prints characters
+ * @args: argument pointer
+ * Return: void.
+ */
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+/**
+ * print_int - prints an integer
+ * @args: argument pointer
+ * Return: void.
+ */
+void print_int(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+/**
+ * print_string - prints a string
+ * @args: argument pointer
+ * Return: void.
+ */
+void print_string(va_list args)
+{
+	printf("%s", va_arg(args, char *));
+}
+/**
+ * print_float - prints a floating point number
+ * @args: argument pointer
+ * Return: void.
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
 }
