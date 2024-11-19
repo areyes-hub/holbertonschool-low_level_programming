@@ -73,9 +73,9 @@ void print_string(va_list args)
 	if (!s)
 	{
 		printf("(nil)");
+		return;
 	}
-	else
-		printf("%s", s);
+	printf("%s", s);
 }
 /**
  * print_float - prints a floating point number
