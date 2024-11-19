@@ -26,7 +26,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 		if (!separator)
 		{
-			printf(" ");
+			continue;
 		}
 		printf("%c ", *separator);
 	}
