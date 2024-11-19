@@ -24,15 +24,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("(nil)");
 		}
-		if (i == n - 1)
+		if (i < n - 1 && separator)
 		{
-			break;
+			printf("%s", separator);
 		}
-		if (!separator)
-		{
-			continue;
-		}
-		printf("%c ", *separator);
 	}
 	printf("\n");
 	va_end(args);
