@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
  * get_op_func - returns a ptr to the appropiate function
  * @s: operator given
@@ -18,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	while (ops[i].op != NULL)
+	while (ops[i].op != NULL && strlen(s) < 2)
 	{
 		if (*s == *(ops[i].op))
 		{
