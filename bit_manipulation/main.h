@@ -8,4 +8,5 @@ int set_bit(unsigned long int *n, unsigned int index);
 int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 unsigned int count_set_bits(int n);
+void print_base2(unsigned long int n);
 #endif

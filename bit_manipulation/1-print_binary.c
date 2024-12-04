@@ -1,30 +1,21 @@
 #include "main.h"
 /**
- * print_binary - prints the binary representation of a number
- * @n: parameter to evaluate
- * Return: void.
+ * print_base2 - prints numbers in binary recursively.
+ * @n: The number to be printed
+ *
+ * Return: On success length.
+ */
+void print_base2(unsigned long int n)
+{
+	if (n >> 1) /* Division by 2 */
+		print_base2(n >> 1);
+	_putchar((n & 1) + '0'); /* Module(2) */
+}
+/**
+ * print_binary - prints the binary representation of a number.
+ * @n: The number to be printed
  */
 void print_binary(unsigned long int n)
 {
-	char bin[32];
-	int i = 0, j, remainder;
-
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	while (n > 0)
-	{
-		remainder = n % 2;
-		if (remainder < 10)
-		{
-			bin[i++] = remainder + '0';
-		}
-		n /= 2;
-	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		_putchar(bin[j]);
-	}
+	print_base2(n);
 }
