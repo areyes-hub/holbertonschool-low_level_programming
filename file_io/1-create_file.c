@@ -11,23 +11,30 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int new_file, file;
+	int new_file;
+	int len = 0, inlen = 0;
+	char *ptr;
 
-	file = sizeof(text_content) - 2;
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	if (text_content == NULL)
+	new_file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	if (new_file == -1)
 	{
-		new_file = open(filename, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
-		close(new_file);
+		return (-1);
 	}
-	else
+	if (text_content != NULL)
 	{
-		new_file = open(filename, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
-		write(new_file, text_content, file);
-		close(new_file);
+		for (inlen = 0, ptr = text_content; *ptr; ptr++)
+		{
+			inlen++;
+		}
+		len = write(new_file, text_content, inlen);
+	}
+	if (close(new_file == -1 || inlen != len))
+	{
+		return (-1);
 	}
 	return (1);
 }
