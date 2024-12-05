@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -12,17 +13,37 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t n;
-	int file;
-	char buff[1024];
+	int file, len, chars;
+	char *buff;
 
 	if (filename == NULL)
 	{
 		return (0);
 	}
+	buff = malloc(sizeof(char) * (letters));
+	if (buff == NULL)
+	{
+		return (0);
+	}
 	file = open(filename, O_RDONLY);
-	n = read(file, buff, letters);
-	write(1, buff, n);
+	if (file == -1)
+	{
+		free(buff);
+		return (0);
+	}
+	len = read(file, buff, letters);
+	if (len == -1)
+	{
+		free(buff);
+		close(file);
+		return (0);
+	}
+	chars = write(STDOUT_FILENO, buff, len);
+	free(buff);
 	close(file);
-	return (n);
+	if (chars != len)
+	{
+		return (0);
+	}
+	return (len);
 }
